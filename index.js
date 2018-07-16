@@ -40,14 +40,11 @@ function total() {
 
 function removeFromCart(item) {
 	  for (var i = 0; i < cart.length; i++){
-  	console.log("in the loop")
-  	console.log("before splice: "+cart[i].itemName)
     if (cart[i].itemName === item){
-    	console.log("before splice: "+cart[i].itemName)
-      cart.splice(i, 1)
-      //return cart
-    }else if (i === cart.length-1 && cart[i].itemName != item){
-    	console.log("That item is not in your cart.")
+    	cart.splice(i, 1)
+      return cart
+    } else if (i === cart.length-1 && cart[i].itemName != item){
+    	return "That item is not in your cart."
     }
   }
 }
