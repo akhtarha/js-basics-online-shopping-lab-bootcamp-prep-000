@@ -39,12 +39,18 @@ function total() {
 }
 
 function removeFromCart(item) {
+	console.log("outside loop1 :" +cart.length)
   for (var i = 0; i < cart.length; i++){
-      if (cart[i].itemName === item){
-        cart.splice(i, 1)
-        return cart
-      }
-  } return cart
+  	console.log("in the loop")
+  	console.log("before splice: "+cart[i].itemName)
+    if (cart[i].itemName === item){
+    	console.log("before splice: "+cart[i].itemName)
+      cart.splice(i, 1)
+      //return cart
+    }else if (i === cart.length-1 && cart[i].itemName != item){
+    	console.log("That item is not in your cart.")
+    }
+  }
 }
 
 function placeOrder(cardNumber) {
